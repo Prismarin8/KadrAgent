@@ -28,7 +28,7 @@ namespace Авторизация
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+                //Создание обработчиков событий
                 this.Familyname_TextBox.Enter += new EventHandler(Familyname_TextBox_Enter);
                 this.Familyname_TextBox.Leave += new EventHandler(Familyname_TextBox_Leave);
 
@@ -56,6 +56,7 @@ namespace Авторизация
                 this.Experience_TextBox.Enter += new EventHandler(Experience_TextBox_Enter);
                 this.Experience_TextBox.Leave += new EventHandler(Experience_TextBox_Leave);
         }
+        //Создание методов TextBox подсказок
         private void Familyname_TextBox_Enter(object sender, EventArgs e)
         {
             if (Familyname_TextBox.Text == "Enter your familyname")
@@ -204,6 +205,7 @@ namespace Авторизация
 
         private void Button_Registration_Click(object sender, EventArgs e)
         {
+            // Создание переменных и присвоение им пустых значений
             string fm = "NONE";
             string n = "NONE";
             string sn = "NONE";
@@ -216,6 +218,7 @@ namespace Авторизация
 
             try
             {
+                //Присвоение переменным значений TextBox
                 fm = Familyname_TextBox.Text;
 
                 n = Name_TextBox.Text;
@@ -234,10 +237,12 @@ namespace Авторизация
             }
             catch
             {
+                // Вывод ошибки неправильного ввода данных
                 MessageBox.Show($"Ошибка! Неверный ввод данных!");
             }
             finally
             {
+                //Проверка введения всех данных
                 if (string.IsNullOrEmpty(Familyname_TextBox.Text) || string.IsNullOrEmpty(Experience_TextBox.Text) || string.IsNullOrEmpty(Name_TextBox.Text) || string.IsNullOrEmpty(Surname_TextBox.Text) ||
             string.IsNullOrEmpty(Login_TextBox.Text) || string.IsNullOrEmpty(Password_TextBox.Text) || string.IsNullOrEmpty(Education_TextBox.Text) || string.IsNullOrEmpty(Professional_direction_TextBox.Text) || string.IsNullOrEmpty(Phone_number_TextBox.Text)
             || (Familyname_TextBox.Text == "Enter your familyname") || (Experience_TextBox.Text == "Enter your experience") || (Name_TextBox.Text == "Enter your name") || (Surname_TextBox.Text == "Enter your surname") ||
@@ -246,7 +251,7 @@ namespace Авторизация
                     MessageBox.Show("Введены не все данные!");
                 }
                 else
-                {
+                {   //SQL-запрос - выбор данных таблицы авторизации
                     string lg_ls_querye = "SELECT Login FROM Autorization";
                     OleDbCommand cmdd = new OleDbCommand(lg_ls_querye, myConection);
                     OleDbDataReader rd;
@@ -264,10 +269,11 @@ namespace Авторизация
                     }
                     if (isLoginExists)
                     {
+                        //Проверка на уникальность логина
                         MessageBox.Show("Пользователь с данным логином уже существует!");
                     }
                     else
-                    {
+                    {   //Ввод данных в таблицу Кандидатов
                         string querye = "Insert into User_K (id, id_kandidate, Familyname, name_kandidate, Surname, Education, Proffesional_direction, Phone_number, Experience) values (@код, @кодк, @фам, @имя, @отч, @обр, @направ, @тел, @exp)";
                         cmd = new OleDbCommand(querye, myConection);
                         cmd.Parameters.AddWithValue("@код", Convert.ToInt32(Id_TextBox.Text));
@@ -280,7 +286,7 @@ namespace Авторизация
                         cmd.Parameters.AddWithValue("@тел", Phone_number_TextBox.Text);
                         cmd.Parameters.AddWithValue("@exp", Experience_TextBox.Text);
                         cmd.ExecuteNonQuery();
-
+                        //Ввод данных в таблицу авторизации
                         string autoriz = "Insert into Autorization (id, Login, [Password]) values (@id, @log, @pas)";
                         cmd = new OleDbCommand(autoriz, myConection);
                         cmd.Parameters.AddWithValue("@id", Convert.ToInt32(Id_TextBox.Text));
@@ -297,6 +303,7 @@ namespace Авторизация
 
         private void Id_TextBox_Click(object sender, EventArgs e)
         {
+            //Автозаполнение TextBox'а id
             string com = "SELECT id FROM Autorization";
             OleDbCommand cmdd = new OleDbCommand(com, myConection);
             OleDbDataReader rd;

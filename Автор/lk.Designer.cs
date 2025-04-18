@@ -143,7 +143,6 @@
             this.MaximizeBox = false;
             this.Name = "lk";
             this.Text = "Кадровое агентсво";
-            this.Load += new System.EventHandler(this.lk_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Experience_NumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

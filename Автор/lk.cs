@@ -12,7 +12,7 @@ using System.Data.OleDb;
 namespace Авторизация
 {
     public partial class lk : Form
-    {
+    {   //Строка подключения базы данных HHruKargin.mdb
         OleDbCommand cmd;
         public static string connectionString = (@"Provider=Microsoft.Jet.Oledb.4.0;Data Source=HHruKargin.mdb");
         private OleDbConnection myConection;
@@ -45,11 +45,6 @@ namespace Авторизация
                 Education_ComboBox.Items.Add(edu);
             }
             read.Close();
-        }
-
-        private void lk_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void Sumbit_button_Click(object sender, EventArgs e)
@@ -120,6 +115,7 @@ namespace Авторизация
                     }
                 }
             }
+            //Вывод ошибок
             catch (Exception ex)
             {
                 MessageBox.Show($"Ошибка: {ex.Message}");

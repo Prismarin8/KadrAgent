@@ -13,6 +13,7 @@ namespace Авторизация
 {
     public partial class Form3 : Form
     {
+        //Строка подключения к базе данных HHruKargin.mdb
         OleDbCommand cmd;
         public static string connectionString = (@"Provider=Microsoft.Jet.Oledb.4.0;Data Source=HHruKargin.mdb");
         private OleDbConnection myConection;
@@ -24,7 +25,8 @@ namespace Авторизация
         }
 
         private void Form3_Load(object sender, EventArgs e)
-        {
+        {   
+            //Создание обработчиков событий
             this.Company_name_TextBox.Enter += new EventHandler(Company_name_TextBox_Enter);
             this.Company_name_TextBox.Leave += new EventHandler(Company_name_TextBox_Leave);
 
@@ -42,6 +44,7 @@ namespace Авторизация
 
             this.Button_Registration.Click += new EventHandler(Button_Registration_Click);
         }
+        //Создание методов TextBox подсказок
         private void Company_name_TextBox_Enter(object sender, EventArgs e)
         {
             if (Company_name_TextBox.Text == "Enter your company name")
@@ -124,7 +127,7 @@ namespace Авторизация
         }
         private void Button_Registration_Click(object sender, EventArgs e)
         {
-
+            //Присвоение переменным значений TextBox
             string cn = Company_name_TextBox.Text;
 
             string lg = Login_TextBox.Text;
@@ -137,11 +140,12 @@ namespace Авторизация
 
             if (string.IsNullOrEmpty(Company_name_TextBox.Text) || string.IsNullOrEmpty(Login_TextBox.Text) || string.IsNullOrEmpty(Password_TextBox.Text) || string.IsNullOrEmpty(Email_TextBox.Text) || string.IsNullOrEmpty(Phone_number_TextBox.Text) || (Company_name_TextBox.Text == "Enter your company name") || (Login_TextBox.Text == "Come up with your login") || (Password_TextBox.Text == "Come up with your password") || (Email_TextBox.Text == "Enter your email") || (Phone_number_TextBox.Text == "Enter your phone number"))
             {
+                //Проверка на заполнение всех данных
                 MessageBox.Show("Введены не все данные!");
             }
             else
             {
-
+                //SQL-запрос - выбор данных таблицы авторизации
                 string lg_ls_querye = "SELECT Login FROM Autorization";
                 OleDbCommand cmdd = new OleDbCommand(lg_ls_querye, myConection);
                 OleDbDataReader rd;
@@ -159,10 +163,12 @@ namespace Авторизация
                 }
                 if (isLoginExists)
                 {
+                    //Проверка на уникальность логина
                     MessageBox.Show("Пользователь с данным логином уже существует!");
                 }
                 else
                 {
+                    //Ввод данных в таблицу Компаний
                     string querye = "Insert into User_C (id, id_company, Company_name, Email, Phone_number) values (@код, @кодк, @нк, @мыло, @тел)";
                     cmd = new OleDbCommand(querye, myConection);
                     cmd.Parameters.AddWithValue("@код", Convert.ToInt32(Id_TextBox.Text));
@@ -172,6 +178,7 @@ namespace Авторизация
                     cmd.Parameters.AddWithValue("@тел", Phone_number_TextBox.Text);
                     cmd.ExecuteNonQuery();
 
+                    //Ввод данных в таблицу авторизации
                     string autoriz = "Insert into Autorization (id, Login, [Password]) values (@id, @log, @pas)";
                     cmd = new OleDbCommand(autoriz, myConection);
                     cmd.Parameters.AddWithValue("@id", Convert.ToInt32(Id_TextBox.Text));
@@ -187,6 +194,7 @@ namespace Авторизация
 
         private void Id_TextBox_Click(object sender, EventArgs e)
         {
+            //Автозаполнение TextBox'а id
             string com = "SELECT id FROM Autorization";
             OleDbCommand cmdd = new OleDbCommand(com, myConection);
             OleDbDataReader rd;
