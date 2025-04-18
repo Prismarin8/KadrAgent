@@ -138,9 +138,11 @@
             this.Controls.Add(this.Label_Experience);
             this.Controls.Add(this.dolj_label);
             this.Controls.Add(this.Dolj_ComboBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "lk";
-            this.Text = "lk";
+            this.Text = "Кадровое агентсво";
             this.Load += new System.EventHandler(this.lk_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Experience_NumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

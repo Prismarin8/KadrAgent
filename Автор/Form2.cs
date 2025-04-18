@@ -204,74 +204,95 @@ namespace Авторизация
 
         private void Button_Registration_Click(object sender, EventArgs e)
         {
+            string fm = "NONE";
+            string n = "NONE";
+            string sn = "NONE";
+            string lg = "NONE";
+            string ps = "NONE";
+            string ed = "NONE";
+            string pd = "NONE";
+            string pn = "NONE";
+            int exp = 0;
 
-            string fm = Familyname_TextBox.Text;
+            try
+            {
+                fm = Familyname_TextBox.Text;
 
-            string n = Name_TextBox.Text;
+                n = Name_TextBox.Text;
 
-            string sn = Surname_TextBox.Text;
+                sn = Surname_TextBox.Text;
 
-            string lg = Login_TextBox.Text;
+                lg = Login_TextBox.Text;
 
-            string ps = Password_TextBox.Text;
+                ps = Password_TextBox.Text;
 
-            string ed = Education_TextBox.Text;
+                ed = Education_TextBox.Text;
 
-            string pd= Professional_direction_TextBox.Text;
-            string pn = Phone_number_TextBox.Text;
-            if (string.IsNullOrEmpty(Familyname_TextBox.Text) || string.IsNullOrEmpty(Experience_TextBox.Text) || string.IsNullOrEmpty(Name_TextBox.Text) || string.IsNullOrEmpty(Surname_TextBox.Text) ||
+                pd = Professional_direction_TextBox.Text;
+                pn = Phone_number_TextBox.Text;
+                exp = Convert.ToInt32(Experience_TextBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show($"Ошибка! Неверный ввод данных!");
+            }
+            finally
+            {
+                if (string.IsNullOrEmpty(Familyname_TextBox.Text) || string.IsNullOrEmpty(Experience_TextBox.Text) || string.IsNullOrEmpty(Name_TextBox.Text) || string.IsNullOrEmpty(Surname_TextBox.Text) ||
             string.IsNullOrEmpty(Login_TextBox.Text) || string.IsNullOrEmpty(Password_TextBox.Text) || string.IsNullOrEmpty(Education_TextBox.Text) || string.IsNullOrEmpty(Professional_direction_TextBox.Text) || string.IsNullOrEmpty(Phone_number_TextBox.Text)
             || (Familyname_TextBox.Text == "Enter your familyname") || (Experience_TextBox.Text == "Enter your experience") || (Name_TextBox.Text == "Enter your name") || (Surname_TextBox.Text == "Enter your surname") ||
             (Login_TextBox.Text == "Come up with your login") || (Password_TextBox.Text == "Come up with your password") || (Education_TextBox.Text == "Enter your education") || (Professional_direction_TextBox.Text == "Enter your professional direction") || (Phone_number_TextBox.Text == "Enter your phone number"))
-            {
-                MessageBox.Show("Введены не все данные!");
-            }
-            else
-            {
-                string lg_ls_querye = "SELECT Login FROM Autorization";
-                OleDbCommand cmdd = new OleDbCommand(lg_ls_querye, myConection);
-                OleDbDataReader rd;
-                rd = cmdd.ExecuteReader();
-                bool isLoginExists = false;
-                while (rd.Read())
                 {
-                    string log = Convert.ToString(rd[0]);
-
-                    if (lg == log)
-                    {
-                        isLoginExists = true;
-                        break;
-                    }
-                }
-                if (isLoginExists)
-                {
-                    MessageBox.Show("Пользователь с данным логином уже существует!");
+                    MessageBox.Show("Введены не все данные!");
                 }
                 else
                 {
-                    string querye = "Insert into User_K (id, id_kandidate, Familyname, name_kandidate, Surname, Education, Proffesional_direction, Phone_number, Experience) values (@код, @кодк, @фам, @имя, @отч, @обр, @направ, @тел, @exp)";
-                    cmd = new OleDbCommand(querye, myConection);
-                    cmd.Parameters.AddWithValue("@код", Convert.ToInt32(Id_TextBox.Text));
-                    cmd.Parameters.AddWithValue("@кодк", Convert.ToInt32(Id_TextBox.Text));
-                    cmd.Parameters.AddWithValue("@фам", Familyname_TextBox.Text);
-                    cmd.Parameters.AddWithValue("@имя", Name_TextBox.Text);
-                    cmd.Parameters.AddWithValue("@отч", Surname_TextBox.Text);
-                    cmd.Parameters.AddWithValue("@обр", Education_TextBox.Text);
-                    cmd.Parameters.AddWithValue("@направ", Professional_direction_TextBox.Text);
-                    cmd.Parameters.AddWithValue("@тел", Phone_number_TextBox.Text);
-                    cmd.Parameters.AddWithValue("@exp", Experience_TextBox.Text);
-                    cmd.ExecuteNonQuery();
+                    string lg_ls_querye = "SELECT Login FROM Autorization";
+                    OleDbCommand cmdd = new OleDbCommand(lg_ls_querye, myConection);
+                    OleDbDataReader rd;
+                    rd = cmdd.ExecuteReader();
+                    bool isLoginExists = false;
+                    while (rd.Read())
+                    {
+                        string log = Convert.ToString(rd[0]);
 
-                    string autoriz = "Insert into Autorization (id, Login, [Password]) values (@id, @log, @pas)";
-                    cmd = new OleDbCommand(autoriz, myConection);
-                    cmd.Parameters.AddWithValue("@id", Convert.ToInt32(Id_TextBox.Text));
-                    cmd.Parameters.AddWithValue("@log", Login_TextBox.Text);
-                    cmd.Parameters.AddWithValue("@pas", Password_TextBox.Text);
-                    cmd.ExecuteNonQuery();
+                        if (lg == log)
+                        {
+                            isLoginExists = true;
+                            break;
+                        }
+                    }
+                    if (isLoginExists)
+                    {
+                        MessageBox.Show("Пользователь с данным логином уже существует!");
+                    }
+                    else
+                    {
+                        string querye = "Insert into User_K (id, id_kandidate, Familyname, name_kandidate, Surname, Education, Proffesional_direction, Phone_number, Experience) values (@код, @кодк, @фам, @имя, @отч, @обр, @направ, @тел, @exp)";
+                        cmd = new OleDbCommand(querye, myConection);
+                        cmd.Parameters.AddWithValue("@код", Convert.ToInt32(Id_TextBox.Text));
+                        cmd.Parameters.AddWithValue("@кодк", Convert.ToInt32(Id_TextBox.Text));
+                        cmd.Parameters.AddWithValue("@фам", Familyname_TextBox.Text);
+                        cmd.Parameters.AddWithValue("@имя", Name_TextBox.Text);
+                        cmd.Parameters.AddWithValue("@отч", Surname_TextBox.Text);
+                        cmd.Parameters.AddWithValue("@обр", Education_TextBox.Text);
+                        cmd.Parameters.AddWithValue("@направ", Professional_direction_TextBox.Text);
+                        cmd.Parameters.AddWithValue("@тел", Phone_number_TextBox.Text);
+                        cmd.Parameters.AddWithValue("@exp", Experience_TextBox.Text);
+                        cmd.ExecuteNonQuery();
+
+                        string autoriz = "Insert into Autorization (id, Login, [Password]) values (@id, @log, @pas)";
+                        cmd = new OleDbCommand(autoriz, myConection);
+                        cmd.Parameters.AddWithValue("@id", Convert.ToInt32(Id_TextBox.Text));
+                        cmd.Parameters.AddWithValue("@log", Login_TextBox.Text);
+                        cmd.Parameters.AddWithValue("@pas", Password_TextBox.Text);
+                        cmd.ExecuteNonQuery();
+                    }
+
                 }
-                
+                Close();
             }
-            Close();
+            
         }
 
         private void Id_TextBox_Click(object sender, EventArgs e)

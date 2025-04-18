@@ -82,7 +82,7 @@ namespace Авторизация
 
                 // Формируем итоговый SQL-запрос
                 string whereClause = string.Join(" AND ", conditions);
-                string querye = "SELECT Familyname, name_kandidate, Surname, Education, Proffesional_direction, Phone_number, Experience FROM User_K";
+                string querye = "SELECT Familyname as Фамилия, name_kandidate as Имя, Surname as Отчество, Education as Образование, Proffesional_direction as Должность, Phone_number as [Номер телефона], Experience as [Опыт работы] FROM User_K";
 
                 if (!string.IsNullOrEmpty(whereClause))
                 {

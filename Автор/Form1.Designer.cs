@@ -81,7 +81,7 @@ namespace Авторизация
             this.Password_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Password_TextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Password_TextBox.Location = new System.Drawing.Point(73, 277);
-            this.Password_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Password_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Password_TextBox.Name = "Password_TextBox";
             this.Password_TextBox.Size = new System.Drawing.Size(532, 26);
             this.Password_TextBox.TabIndex = 4;
@@ -92,7 +92,7 @@ namespace Авторизация
             this.Login_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Login_TextBox.Location = new System.Drawing.Point(73, 198);
-            this.Login_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Login_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Login_TextBox.Name = "Login_TextBox";
             this.Login_TextBox.Size = new System.Drawing.Size(532, 26);
             this.Login_TextBox.TabIndex = 3;
@@ -104,7 +104,7 @@ namespace Авторизация
             this.Button_Authorization.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_Authorization.ForeColor = System.Drawing.Color.White;
             this.Button_Authorization.Location = new System.Drawing.Point(253, 343);
-            this.Button_Authorization.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button_Authorization.Margin = new System.Windows.Forms.Padding(4);
             this.Button_Authorization.Name = "Button_Authorization";
             this.Button_Authorization.Size = new System.Drawing.Size(187, 62);
             this.Button_Authorization.TabIndex = 5;
@@ -168,8 +168,9 @@ namespace Авторизация
             this.Controls.Add(this.Password_label);
             this.Controls.Add(this.Login_label);
             this.Controls.Add(this.title);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Authorization";
             this.Load += new System.EventHandler(this.Form1_Load);

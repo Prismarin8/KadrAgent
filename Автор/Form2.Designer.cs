@@ -82,7 +82,7 @@ namespace Авторизация
             this.Familyname_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Familyname_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Familyname_TextBox.Location = new System.Drawing.Point(73, 272);
-            this.Familyname_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Familyname_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Familyname_TextBox.Name = "Familyname_TextBox";
             this.Familyname_TextBox.Size = new System.Drawing.Size(372, 26);
             this.Familyname_TextBox.TabIndex = 4;
@@ -105,7 +105,7 @@ namespace Авторизация
             this.Name_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name_TextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Name_TextBox.Location = new System.Drawing.Point(73, 351);
-            this.Name_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Name_TextBox.Name = "Name_TextBox";
             this.Name_TextBox.Size = new System.Drawing.Size(372, 26);
             this.Name_TextBox.TabIndex = 6;
@@ -116,7 +116,7 @@ namespace Авторизация
             this.Login_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login_TextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Login_TextBox.Location = new System.Drawing.Point(73, 508);
-            this.Login_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Login_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Login_TextBox.Name = "Login_TextBox";
             this.Login_TextBox.Size = new System.Drawing.Size(372, 26);
             this.Login_TextBox.TabIndex = 10;
@@ -139,7 +139,7 @@ namespace Авторизация
             this.Surname_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Surname_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Surname_TextBox.Location = new System.Drawing.Point(73, 430);
-            this.Surname_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Surname_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Surname_TextBox.Name = "Surname_TextBox";
             this.Surname_TextBox.Size = new System.Drawing.Size(372, 26);
             this.Surname_TextBox.TabIndex = 8;
@@ -162,7 +162,7 @@ namespace Авторизация
             this.Phone_number_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Phone_number_TextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Phone_number_TextBox.Location = new System.Drawing.Point(73, 823);
-            this.Phone_number_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Phone_number_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Phone_number_TextBox.Name = "Phone_number_TextBox";
             this.Phone_number_TextBox.Size = new System.Drawing.Size(372, 26);
             this.Phone_number_TextBox.TabIndex = 18;
@@ -185,7 +185,7 @@ namespace Авторизация
             this.Professional_direction_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Professional_direction_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Professional_direction_TextBox.Location = new System.Drawing.Point(73, 745);
-            this.Professional_direction_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Professional_direction_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Professional_direction_TextBox.Name = "Professional_direction_TextBox";
             this.Professional_direction_TextBox.Size = new System.Drawing.Size(372, 26);
             this.Professional_direction_TextBox.TabIndex = 16;
@@ -208,7 +208,7 @@ namespace Авторизация
             this.Education_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Education_TextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Education_TextBox.Location = new System.Drawing.Point(73, 666);
-            this.Education_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Education_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Education_TextBox.Name = "Education_TextBox";
             this.Education_TextBox.Size = new System.Drawing.Size(372, 26);
             this.Education_TextBox.TabIndex = 14;
@@ -231,7 +231,7 @@ namespace Авторизация
             this.Password_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Password_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Password_TextBox.Location = new System.Drawing.Point(73, 587);
-            this.Password_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Password_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Password_TextBox.Name = "Password_TextBox";
             this.Password_TextBox.Size = new System.Drawing.Size(372, 26);
             this.Password_TextBox.TabIndex = 12;
@@ -255,7 +255,7 @@ namespace Авторизация
             this.Button_Registration.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_Registration.ForeColor = System.Drawing.Color.White;
             this.Button_Registration.Location = new System.Drawing.Point(163, 956);
-            this.Button_Registration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button_Registration.Margin = new System.Windows.Forms.Padding(4);
             this.Button_Registration.Name = "Button_Registration";
             this.Button_Registration.Size = new System.Drawing.Size(187, 62);
             this.Button_Registration.TabIndex = 19;
@@ -279,7 +279,7 @@ namespace Авторизация
             this.Id_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Id_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Id_TextBox.Location = new System.Drawing.Point(73, 193);
-            this.Id_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Id_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Id_TextBox.Name = "Id_TextBox";
             this.Id_TextBox.ReadOnly = true;
             this.Id_TextBox.Size = new System.Drawing.Size(372, 26);
@@ -291,7 +291,7 @@ namespace Авторизация
             this.Experience_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Experience_TextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Experience_TextBox.Location = new System.Drawing.Point(73, 902);
-            this.Experience_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Experience_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Experience_TextBox.Name = "Experience_TextBox";
             this.Experience_TextBox.Size = new System.Drawing.Size(372, 26);
             this.Experience_TextBox.TabIndex = 23;
@@ -339,8 +339,9 @@ namespace Авторизация
             this.Controls.Add(this.Familyname_TextBox);
             this.Controls.Add(this.Familyname_label);
             this.Controls.Add(this.title);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "Registration";
             this.Load += new System.EventHandler(this.Form2_Load);

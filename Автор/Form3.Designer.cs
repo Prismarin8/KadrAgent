@@ -50,7 +50,7 @@ namespace Авторизация
             this.Phone_number_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Phone_number_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Phone_number_TextBox.Location = new System.Drawing.Point(73, 587);
-            this.Phone_number_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Phone_number_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Phone_number_TextBox.Name = "Phone_number_TextBox";
             this.Phone_number_TextBox.Size = new System.Drawing.Size(372, 26);
             this.Phone_number_TextBox.TabIndex = 23;
@@ -73,7 +73,7 @@ namespace Авторизация
             this.Email_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email_TextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Email_TextBox.Location = new System.Drawing.Point(73, 508);
-            this.Email_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Email_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Email_TextBox.Name = "Email_TextBox";
             this.Email_TextBox.Size = new System.Drawing.Size(372, 26);
             this.Email_TextBox.TabIndex = 21;
@@ -96,7 +96,7 @@ namespace Авторизация
             this.Password_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Password_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Password_TextBox.Location = new System.Drawing.Point(73, 430);
-            this.Password_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Password_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Password_TextBox.Name = "Password_TextBox";
             this.Password_TextBox.Size = new System.Drawing.Size(372, 26);
             this.Password_TextBox.TabIndex = 19;
@@ -119,7 +119,7 @@ namespace Авторизация
             this.Login_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login_TextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Login_TextBox.Location = new System.Drawing.Point(73, 351);
-            this.Login_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Login_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Login_TextBox.Name = "Login_TextBox";
             this.Login_TextBox.Size = new System.Drawing.Size(372, 26);
             this.Login_TextBox.TabIndex = 17;
@@ -142,7 +142,7 @@ namespace Авторизация
             this.Company_name_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Company_name_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Company_name_TextBox.Location = new System.Drawing.Point(73, 272);
-            this.Company_name_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Company_name_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Company_name_TextBox.Name = "Company_name_TextBox";
             this.Company_name_TextBox.Size = new System.Drawing.Size(372, 26);
             this.Company_name_TextBox.TabIndex = 15;
@@ -178,7 +178,7 @@ namespace Авторизация
             this.Button_Registration.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_Registration.ForeColor = System.Drawing.Color.White;
             this.Button_Registration.Location = new System.Drawing.Point(163, 654);
-            this.Button_Registration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button_Registration.Margin = new System.Windows.Forms.Padding(4);
             this.Button_Registration.Name = "Button_Registration";
             this.Button_Registration.Size = new System.Drawing.Size(187, 62);
             this.Button_Registration.TabIndex = 24;
@@ -201,7 +201,7 @@ namespace Авторизация
             this.Id_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Id_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Id_TextBox.Location = new System.Drawing.Point(73, 193);
-            this.Id_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Id_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Id_TextBox.Name = "Id_TextBox";
             this.Id_TextBox.ReadOnly = true;
             this.Id_TextBox.Size = new System.Drawing.Size(372, 26);
@@ -228,8 +228,9 @@ namespace Авторизация
             this.Controls.Add(this.Company_name_TextBox);
             this.Controls.Add(this.Company_name_label);
             this.Controls.Add(this.title);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Form3";
             this.Text = "Registration";
             this.Load += new System.EventHandler(this.Form3_Load);
