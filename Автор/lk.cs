@@ -45,6 +45,8 @@ namespace Авторизация
                 Education_ComboBox.Items.Add(edu);
             }
             read.Close();
+
+            Education_ComboBox.Items.Add("Не важно");
         }
 
         private void Sumbit_button_Click(object sender, EventArgs e)
@@ -65,7 +67,11 @@ namespace Авторизация
                     conditions.Add("Proffesional_direction = @prof");
                 }
 
-                if (!string.IsNullOrEmpty(edu))
+                if (Education_ComboBox.SelectedItem.ToString() == "Не важно")
+                {
+
+                }
+                else if (!string.IsNullOrEmpty(edu))
                 {
                     conditions.Add("Education = @edu");
                 }
@@ -75,17 +81,23 @@ namespace Авторизация
                     conditions.Add("Experience >= @exp");
                 }
 
+
                 // Формируем итоговый SQL-запрос
                 string whereClause = string.Join(" AND ", conditions);
                 string querye = "SELECT Familyname as Фамилия, name_kandidate as Имя, Surname as Отчество, Education as Образование, Proffesional_direction as Должность, Phone_number as [Номер телефона], Experience as [Опыт работы] FROM User_K";
+
+                if (Education_ComboBox.SelectedItem.ToString() == "Не важно")
+                {
+                    querye = "SELECT Familyname as Фамилия, name_kandidate as Имя, Surname as Отчество, Education as Образование, Proffesional_direction as Должность, Phone_number as [Номер телефона], Experience as [Опыт работы] FROM User_K";
+                }
 
                 if (!string.IsNullOrEmpty(whereClause))
                 {
                     querye += $" WHERE {whereClause}";
                 }
 
-                // Создание команды с использованием параметров
-                using (OleDbCommand cmd = new OleDbCommand(querye, myConection))
+                    // Создание команды с использованием параметров
+                    using (OleDbCommand cmd = new OleDbCommand(querye, myConection))
                 {
                     if (!string.IsNullOrEmpty(dolj))
                     {
@@ -102,8 +114,8 @@ namespace Авторизация
                         cmd.Parameters.AddWithValue("@exp", exp);
                     }
 
-                    // Использование OleDbDataAdapter для заполнения DataTable
-                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
+                        // Использование OleDbDataAdapter для заполнения DataTable
+                        using (OleDbDataAdapter adapter = new OleDbDataAdapter(cmd))
                     {
                         DataTable dataTable = new DataTable(); // Таблица для хранения результата
 

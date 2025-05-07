@@ -49,3 +49,8 @@ D:\vs\source\repos\Автор\obj\Debug\Авторизация.csproj.GenerateRe
 D:\vs\source\repos\Автор\obj\Debug\Авторизация.csproj.CoreCompileInputs.cache
 D:\vs\source\repos\Автор\obj\Debug\Авторизация.exe
 D:\vs\source\repos\Автор\obj\Debug\Авторизация.pdb
+D:\vs\source\repos\Автор\bin\Debug\Авторизация.exe.manifest
+D:\vs\source\repos\Автор\bin\Debug\Авторизация.application
+D:\vs\source\repos\Автор\obj\Debug\Авторизация.TrustInfo.xml
+D:\vs\source\repos\Автор\obj\Debug\Авторизация.exe.manifest
+D:\vs\source\repos\Автор\obj\Debug\Авторизация.application

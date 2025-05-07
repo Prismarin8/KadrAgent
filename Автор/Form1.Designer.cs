@@ -38,6 +38,8 @@ namespace Авторизация
             this.LinkLabel_Registration_for_Candidate = new System.Windows.Forms.LinkLabel();
             this.LinkLabel_Registration_for_employer_company = new System.Windows.Forms.LinkLabel();
             this.label_slash_link = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // title
@@ -79,7 +81,7 @@ namespace Авторизация
             // Password_TextBox
             // 
             this.Password_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password_TextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.Password_TextBox.ForeColor = System.Drawing.Color.Silver;
             this.Password_TextBox.Location = new System.Drawing.Point(73, 277);
             this.Password_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Password_TextBox.Name = "Password_TextBox";
@@ -152,6 +154,18 @@ namespace Авторизация
             this.label_slash_link.TabIndex = 8;
             this.label_slash_link.Text = "/";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(575, 280);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Form1
             // 
             this.AcceptButton = this.Button_Authorization;
@@ -159,6 +173,7 @@ namespace Авторизация
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(221)))), ((int)(((byte)(115)))));
             this.ClientSize = new System.Drawing.Size(672, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label_slash_link);
             this.Controls.Add(this.LinkLabel_Registration_for_employer_company);
             this.Controls.Add(this.LinkLabel_Registration_for_Candidate);
@@ -174,6 +189,7 @@ namespace Авторизация
             this.Name = "Form1";
             this.Text = "Authorization";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,6 +206,7 @@ namespace Авторизация
         private System.Windows.Forms.LinkLabel LinkLabel_Registration_for_Candidate;
         private System.Windows.Forms.LinkLabel LinkLabel_Registration_for_employer_company;
         private System.Windows.Forms.Label label_slash_link;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

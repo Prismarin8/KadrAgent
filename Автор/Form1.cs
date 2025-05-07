@@ -27,6 +27,8 @@ namespace Авторизация
 
             this.Password_TextBox.Enter += new EventHandler(Password_TextBox_Enter);
             this.Password_TextBox.Leave += new EventHandler(Password_TextBox_Leave);
+
+            pictureBox1.Image = Image.FromFile("D:\\vs\\source\\repos\\Автор\\icons8-eye-96.png");
         }
 
         //Создание методов TextBox подсказок
@@ -117,6 +119,27 @@ namespace Авторизация
             //Запуск формы регистрации компаний
             Form3 Registration = new Form3();
             Registration.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (Password_TextBox.ForeColor == Color.Silver && Password_TextBox.Text == "Enter your password")
+            {
+                Password_TextBox.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                if (Password_TextBox.UseSystemPasswordChar == true)
+                {
+                    Password_TextBox.UseSystemPasswordChar = false;
+                    pictureBox1.Image = Image.FromFile("D:\\vs\\source\\repos\\Автор\\icons8-закрытый-глаз-96.png");
+                }
+                else
+                {
+                    Password_TextBox.UseSystemPasswordChar = true;
+                    pictureBox1.Image = Image.FromFile("D:\\vs\\source\\repos\\Автор\\icons8-eye-96.png");
+                }
+            }
         }
     }
 }
